@@ -6,10 +6,6 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
-  # GET /activities/1
-  def show
-  end
-
   # GET /activities/new
   def new
     @activity = Activity.new
@@ -23,7 +19,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      redirect_to activities_path, notice: 'Activity was successfully created.'
+      redirect_to activities_path, notice: "L'activité a bien été créée."
     else
       render :new
     end
@@ -32,7 +28,7 @@ class ActivitiesController < ApplicationController
   # PATCH/PUT /activities/1
   def update
     if @activity.update(activity_params)
-      redirect_to activities_path, notice: 'Activity was successfully updated.'
+      redirect_to activities_path, notice: "L'activité a bien été modifiée."
     else
       render :edit
     end
@@ -41,7 +37,7 @@ class ActivitiesController < ApplicationController
   # DELETE /activities/1
   def destroy
     @activity.destroy
-    redirect_to activities_path, notice: 'Activity was successfully destroyed.'
+    redirect_to activities_path, notice: "L'activité a bien été supprimée."
   end
 
   private

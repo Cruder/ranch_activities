@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
     if @session.save
-      redirect_to sessions_path, notice: 'Session was successfully created.'
+      redirect_to sessions_path, notice: 'La participation a bien été créée.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   # PATCH/PUT /sessions/1
   def update
     if @session.update(session_params)
-      redirect_to sessions_path, notice: 'Session was successfully created.'
+      redirect_to sessions_path, notice: 'La participation a bien été modifiée.'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   def destroy
     @session.destroy
-    redirect_to sessions_path, notice: 'Session was successfully destroyed.'
+    redirect_to sessions_path, notice: 'La participation a bien été supprimée.'
   end
 
   private

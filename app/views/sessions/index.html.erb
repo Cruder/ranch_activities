@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sessions</h1>
+<h1>Participations</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Activity</th>
-      <th>People</th>
+      <th>Activité</th>
+      <th>Participants</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
       <tr>
         <td><%= session.activity.name %></td>
         <td><%= session.people %></td>
-        <td><%= link_to 'Edit', edit_session_path(session) %></td>
-        <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editer', edit_session_path(session) %></td>
+        <td><%= link_to 'Supprimer', session, method: :delete, data: { confirm: 'Etes-vous sûr ?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Session', new_session_path %>
+<%= link_to 'Nouvelle participation', new_session_path %>
