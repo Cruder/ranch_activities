@@ -2,8 +2,8 @@
 
 one:
   people: 1
-  activity_id: 1
+  activity: one
 
 two:
   people: 1
-  activity_id: 1
+  activity: two

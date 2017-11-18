@@ -20,12 +20,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       post sessions_url, params: { session: { activity_id: @session.activity_id, people: @session.people } }
     end
 
-    assert_redirected_to session_url(Session.last)
-  end
-
-  test "should show session" do
-    get session_url(@session)
-    assert_response :success
+    assert_redirected_to sessions_path
   end
 
   test "should get edit" do
@@ -35,7 +30,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update session" do
     patch session_url(@session), params: { session: { activity_id: @session.activity_id, people: @session.people } }
-    assert_redirected_to session_url(@session)
+    assert_redirected_to sessions_path
   end
 
   test "should destroy session" do
@@ -43,6 +38,6 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
       delete session_url(@session)
     end
 
-    assert_redirected_to sessions_url
+    assert_redirected_to sessions_path
   end
 end
