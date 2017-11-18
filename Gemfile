@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.4'
 # gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
+gem 'devise'
 
 # Database
 gem 'pg', group: %i(production)
