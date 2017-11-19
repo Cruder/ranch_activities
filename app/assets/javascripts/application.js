@@ -18,5 +18,5 @@
 
 $(document).on('ready page:change page:load turbolinks:load', function() {
     Waves.displayEffect();
-    console.log("Hello")
+    $('select').material_select();
 });
