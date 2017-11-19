@@ -1,6 +1,8 @@
 console.log("Relative");
 
 $("tr[data-id='<%= @activity.id %>'] > td.people").each(function(index) {
-    value = $(this)
-    value.text(<%= @activity.people %>)
+    <% if @activity.people >= 0 %>
+      value = $(this)
+      value.text(<%= @activity.people %>)
+    <% end %>
 });
