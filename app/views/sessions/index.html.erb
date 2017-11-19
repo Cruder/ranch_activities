@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Participations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activité</th>
+      <th>Participants</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sessions.each do |session| %>
+      <tr>
+        <td><%= session.activity.name %></td>
+        <td><%= session.people %></td>
+        <td><%= link_to 'Editer', edit_session_path(session) %></td>
+        <td><%= link_to 'Supprimer', session, method: :delete, data: { confirm: 'Etes-vous sûr ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouvelle participation', new_session_path %>

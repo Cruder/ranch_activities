@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activités</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= link_to 'Editer', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Etes vous sûr ? Cela entrainera la suppression de toutes les participations a cette activité.' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouvelle activité', new_activity_path %>
