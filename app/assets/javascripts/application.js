@@ -10,6 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require materialize-sprockets
 //= require_tree .
+
+$(document).on('ready page:change page:load turbolinks:load', function() {
+    Waves.displayEffect();
+    console.log("Hello")
+});
