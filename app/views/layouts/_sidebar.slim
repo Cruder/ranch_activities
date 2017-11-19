@@ -4,6 +4,9 @@ header
       i.material-icons menu
 
   ul#nav-mobile.side-nav.fixed
+    - if user_signed_in?
+      li.center= current_user.email
+
     li.bold= link_to 'Participations', sessions_path, class: 'waves-effect waves-teal'
     li.bold= link_to 'Activités', activities_path, class: 'waves-effect waves-teal'
-    li.bold= link_to 'Utilisateurs', sessions_path, class: 'waves-effect waves-teal'
+    li.bold= link_to 'Utilisateurs', users_path, class: 'waves-effect waves-teal'

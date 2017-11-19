@@ -1,4 +1,17 @@
 h1 Users
 
-- @users.each do |user|
-  p= user.email
+table
+  thead
+    tr
+      th Email
+      th Edit
+      th Delete
+  - @users.each do |user|
+    tr
+      td= user.email
+      td
+        button.btn.waves-effect.waves-light.indigo= link_to 'Editer', edit_user_path(user)
+      td
+        button.btn.waves-effect.waves-light.red= link_to 'Supprimer', user, method: :delete, data: { confirm: 'Etes-vous sûr ?' }
+
+button.btn.waves-effect.waves-light= link_to 'Nouvel Utilisateur', new_user_path
