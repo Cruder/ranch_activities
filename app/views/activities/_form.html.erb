@@ -16,6 +16,11 @@
     <%= form.text_field :name, id: :activity_name %>
   </div>
 
+  <div class="field">
+    <%= form.label :people %>
+    <%= form.number_field :people, id: :session_people, min: 0 %>
+  </div>
+
   <div class="actions">
     <%= link_to 'Annuler', activities_path, class: 'waves-effect waves-light btn red' %>
     <%= form.submit class: 'waves-effect waves-light btn' %>

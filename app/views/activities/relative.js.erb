@@ -1,0 +1,6 @@
+console.log("Relative");
+
+$("tr[data-id='<%= @activity.id %>'] > td.people").each(function(index) {
+    value = $(this)
+    value.text(<%= @activity.people %>)
+});

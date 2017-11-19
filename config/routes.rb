@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :activities, except: %i[show]
-  resources :sessions, except: %i[show]
+  resources :activities, except: %i[show] do
+    member { post :relative }
+  end
 
-  root to: 'sessions#index'
+  root to: 'activities#index'
 
   devise_for :users, only: %i[]
 

@@ -1,10 +1,10 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_activity, only: %i[edit update destroy]
+  before_action :set_activity, only: %i[edit update destroy relative]
 
   # GET /activities
   def index
-    @activities = Activity.all
+    @activities = Activity.all.order(updated_at: :desc)
   end
 
   # GET /activities/new
@@ -40,6 +40,13 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path, notice: "L'activité a bien été supprimée."
   end
 
+  def relative
+    return if @activity.people.zero? && params[:value].to_i < 0
+
+    @activity.people += params[:value].to_i
+    @activity.save
+  end
+
   private
 
   def set_activity
@@ -47,6 +54,6 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name)
+    params.require(:activity).permit(:name, :people)
   end
 end

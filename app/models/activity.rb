@@ -1,3 +1,3 @@
 class Activity < ApplicationRecord
-  has_many :sessions, dependent: :destroy
+  validates :people, numericality: { greater_than_or_equal_to: 0 }
 end
