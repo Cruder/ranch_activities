@@ -1,0 +1,9 @@
+header
+  .container
+    a#collapse-button data-activates='nav-mobile' href=''
+      i.material-icons menu
+
+  ul#nav-mobile.side-nav.fixed
+    li.bold= link_to 'Participations', sessions_path, class: 'waves-effect waves-teal'
+    li.bold= link_to 'Activités', activities_path, class: 'waves-effect waves-teal'
+    li.bold= link_to 'Utilisateurs', sessions_path, class: 'waves-effect waves-teal'
