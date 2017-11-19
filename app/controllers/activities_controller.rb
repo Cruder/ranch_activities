@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: %i(edit update destroy)
+  before_action :authenticate_user!
+  before_action :set_activity, only: %i[edit update destroy]
 
   # GET /activities
   def index
@@ -12,8 +13,7 @@ class ActivitiesController < ApplicationController
   end
 
   # GET /activities/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /activities
   def create
@@ -41,11 +41,12 @@ class ActivitiesController < ApplicationController
   end
 
   private
-    def set_activity
-      @activity = Activity.find(params[:id])
-    end
 
-    def activity_params
-      params.require(:activity).permit(:name)
-    end
+  def set_activity
+    @activity = Activity.find(params[:id])
+  end
+
+  def activity_params
+    params.require(:activity).permit(:name)
+  end
 end
