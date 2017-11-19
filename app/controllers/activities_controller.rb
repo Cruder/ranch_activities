@@ -41,8 +41,6 @@ class ActivitiesController < ApplicationController
   end
 
   def relative
-    return if @activity.people.zero? && params[:value].to_i < 0
-
     @activity.people += params[:value].to_i
     @activity.save
   end
