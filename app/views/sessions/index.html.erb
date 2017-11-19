@@ -15,9 +15,9 @@
     <% @sessions.each do |session| %>
       <tr>
         <td><%= session.activity.name %></td>
-        <td><%= session.people %></td>
-        <td><%= link_to 'Editer', edit_session_path(session) %></td>
-        <td><%= link_to 'Supprimer', session, method: :delete, data: { confirm: 'Etes-vous sûr ?' } %></td>
+        <td class="people"><%= session.people %></td>
+        <td><%= link_to 'Editer', edit_session_path(session), class: 'waves-effect waves-light btn primary-bg primary' %></td>
+        <td><%= link_to 'Supprimer', session, method: :delete, data: { confirm: 'Etes-vous sûr ?' }, class: 'waves-effect waves-light btn danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'Nouvelle participation', new_session_path %>
+<%= link_to 'Nouvelle participation', new_session_path, class: 'waves-effect waves-light btn' %>

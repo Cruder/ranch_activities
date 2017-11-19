@@ -1,10 +1,10 @@
-h1 Sign In
+h1 Connexion
 
 = form_for @user, url: auth_index_url do |f|
   = f.label :email
   = f.email_field :email
 
   = f.label :password
-  = f.password_field :password, label: 'Password'
+  = f.password_field :password
 
-  = f.submit
+  = f.submit 'Connexion', class: 'waves-effect waves-light btn'
